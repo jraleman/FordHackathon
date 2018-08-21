@@ -15,13 +15,73 @@ Install all the dependencies
 
 ```
 npm install
-
 ```
 
 And start the server in the background
 
 ```
 npm start &
+```
+
+## Project Structure
+
+The idea of having a good project structure is to have a cross platform
+project, to maximize code reuse, keep the configurations out of the code,
+and minimize the component state.
+
+This is the main idea:
+
+```
+./
+├── README.md
+├── package-lock.json
+├── package.json
+├── public/
+│   ├── css/
+│   │   └── styles.js
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── js/
+│   │   └── scripts.js
+│   └── manifest.json
+├── resources/
+│   └── sketches/
+│       ├── ford-platform.pdf
+│       └── platform-ui.pdf
+├── src/
+│   ├── App.js
+│   ├── components/
+│   │   └── GridItem/
+│   │       ├── GridItem.js
+│   │       └── index.js
+│   ├── config/
+│   ├── containers/
+│   │   ├── GridContainer/
+│   │   │   ├── GridContainer.js
+│   │   │   └── index.js
+│   │   └── RootContainer/
+│   │       ├── RootContainer.js
+│   │       └── index.js
+│   ├── fixtures/
+│   │   ├── apps/
+│   │   │   ├── index.js
+│   │   │   ├── json/
+│   │   │   │   └── appItemOne.json
+│   │   │   └── png/
+│   │   │       └── app-item-one.png
+│   │   └── index.js
+│   ├── index.js
+│   └── registerServiceWorker.js
+└── yarn.lock
+```
+
+### Walkthrough
+
+Basic walkthrough of the project structure, describing the directories
+in more detail.
+
+```
+... wip
 ```
 
 ## Guidelines
