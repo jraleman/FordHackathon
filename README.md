@@ -2,6 +2,28 @@
 
 ...
 
+## Setup
+
+Clone the repository
+
+```
+git clone https://github.com/jraleman/FordHackathon.git ford-app-store
+cd ford-app-store/
+```
+
+Install all the dependencies
+
+```
+npm install
+
+```
+
+And start the server in the background
+
+```
+npm start &
+```
+
 ## Guidelines
 
 ...
