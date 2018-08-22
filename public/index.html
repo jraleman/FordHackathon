@@ -18,14 +18,11 @@
 
 <body class="page-template-default page page-id-5 woocommerce-no-js singular page-white-borders header-in-left-side">
 
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
-  <div id="root"></div>
-
-
   <div id="page-container" class="sh-header-in-side">
-
+	  <noscript>
+		You need to enable JavaScript to run this app.
+	  </noscript>
+	<div id="root"></div>
 
     <header class="primary-mobile">
 
@@ -737,116 +734,8 @@
   <script type='text/javascript' src='https://jevelin.shufflehound.com/portfolio1/wp-content/themes/jevelin/js/plugins.js?ver=4.9.8'></script>
   <script type='text/javascript' src='https://jevelin.shufflehound.com/portfolio1/wp-content/themes/jevelin/js/scripts.js?ver=4.9.8'></script>
 
-
-  <script type="text/javascript">
-    jQuery(document).ready(function($) {
-
-
-      $('.primary-desktop .header-logo-container, .primary-mobile .header-logo-container').attr('href', 'http://jevelin.shufflehound.com/hello/');
-
-      function jevelin_settings() {
-        if ($(window).width() < 600) {
-          $('.sh-settings').hide();
-        } else {
-          $('.sh-settings').show();
-        }
-      }
-      jevelin_settings();
-
-      $(window).resize(function() {
-        clearTimeout(window.resizedFinished2);
-        window.resizedFinished2 = setTimeout(function() {
-          jevelin_settings();
-        }, 500);
-      });
-
-      $('.sh-settings-hide').on('click', function() {
-        $('.sh-settings').toggleClass('sh-settings-active');
-      });
-
-      $(document).keyup(function(e) {
-        if (e.keyCode == 27) {
-          if ($('.sh-settings').hasClass('sh-settings-active')) {
-            $('.sh-settings').removeClass('sh-settings-active');
-          }
-        }
-      });
-
-      jQuery('.form-submit #submit').on('click', function(event) {
-        alert('This feature is disabled in our demo site. Sorry for any inconvenience.');
-        event.preventDefault()
-        event.stopPropagation()
-        return false;
-      });
-
-    });
-  </script>
-
-
-  <script type="text/javascript">
-    jQuery(document).ready(function($) {
-      "use strict";
-
-      $(".sh-page-loader").fadeOut(500);
-      $("body").css('overflow', 'visible');
-
-      $(window).bind('beforeunload', function(e) {
-        $('.sh-page-loader').fadeIn();
-      });
-
-    });
-  </script>
-
-
-  <script type="text/javascript">
-    var c = document.body.className;
-    c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
-    document.body.className = c;
-  </script>
-  <script type='text/javascript'>
-    /* <![CDATA[ */
-    var wc_add_to_cart_params = {
-      "ajax_url": "\/portfolio1\/wp-admin\/admin-ajax.php",
-      "wc_ajax_url": "\/portfolio1\/?wc-ajax=%%endpoint%%",
-      "i18n_view_cart": "View cart",
-      "cart_url": "https:\/\/jevelin.shufflehound.com\/portfolio1",
-      "is_cart": "",
-      "cart_redirect_after_add": "no"
-    };
-    /* ]]> */
-  </script>
-  <script type='text/javascript' src='https://jevelin.shufflehound.com/portfolio1/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=3.4.3'></script>
-  <script type='text/javascript' src='https://jevelin.shufflehound.com/portfolio1/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'></script>
-  <script type='text/javascript' src='https://jevelin.shufflehound.com/portfolio1/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4'></script>
-  <script type='text/javascript'>
-    /* <![CDATA[ */
-    var woocommerce_params = {
-      "ajax_url": "\/portfolio1\/wp-admin\/admin-ajax.php",
-      "wc_ajax_url": "\/portfolio1\/?wc-ajax=%%endpoint%%"
-    };
-    /* ]]> */
-  </script>
-  <script type='text/javascript' src='https://jevelin.shufflehound.com/portfolio1/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=3.4.3'></script>
-  <script type='text/javascript'>
-    /* <![CDATA[ */
-    var wc_cart_fragments_params = {
-      "ajax_url": "\/portfolio1\/wp-admin\/admin-ajax.php",
-      "wc_ajax_url": "\/portfolio1\/?wc-ajax=%%endpoint%%",
-      "cart_hash_key": "wc_cart_hash_681a7912d4762a4be5c8e7ca465ede50",
-      "fragment_name": "wc_fragments_681a7912d4762a4be5c8e7ca465ede50"
-    };
-    /* ]]> */
-  </script>
-  <script type='text/javascript' src='https://jevelin.shufflehound.com/portfolio1/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=3.4.3'></script>
-  <script type='text/javascript' src='https://jevelin.shufflehound.com/portfolio1/wp-includes/js/jquery/ui/effect.min.js?ver=1.11.4'></script>
   <script type='text/javascript' src='https://jevelin.shufflehound.com/portfolio1/wp-content/themes/jevelin/js/plugins/bootstrap.min.js?ver=3.3.4'></script>
-  <script type='text/javascript' src='https://jevelin.shufflehound.com/portfolio1/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
-  <script type='text/javascript' src='https://jevelin.shufflehound.com/portfolio1/wp-includes/js/comment-reply.min.js?ver=4.9.8'></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function($) {
-      "use strict";
-    });
-  </script>
+
 
 </body>
 
