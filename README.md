@@ -1,6 +1,6 @@
 # FordHackathon
 
-...
+![ford-motors-logo](resources/ford-motors-logo.png)
 
 ## Setup
 
@@ -38,13 +38,16 @@ This is the main idea:
 ├── package.json
 ├── public/
 │   ├── css/
-│   │   └── styles.js
+│   │   ├── responsive.css
+│   │   └── styles.css
 │   ├── favicon.ico
 │   ├── index.html
 │   ├── js/
+│   │   ├── jquery-1.12.4.min.js
 │   │   └── scripts.js
 │   └── manifest.json
 ├── resources/
+│   ├── ford-motors-logo.png
 │   └── sketches/
 │       ├── ford-platform.pdf
 │       └── platform-ui.pdf
@@ -54,7 +57,6 @@ This is the main idea:
 │   │   └── GridItem/
 │   │       ├── GridItem.js
 │   │       └── index.js
-│   ├── config/
 │   ├── containers/
 │   │   ├── GridContainer/
 │   │   │   ├── GridContainer.js
@@ -80,9 +82,34 @@ This is the main idea:
 Basic walkthrough of the project structure, describing the directories
 in more detail.
 
-```
-... wip
-```
+#### `public/`
+
+Divides what is *static* vs *dynamic* logic...
+Pretty much anything that is not used by the app when it compiles.
+
+#### `resources/`
+
+Project resources, such as videos, photos, sketches, etc...
+
+#### `src/`
+
+React app source code.
+
+- #### `src/components/`
+
+All the stateless components will go here.
+These components should only take props.
+
+- #### `src/containers/`
+
+The Container components go here.
+These are the stateful ones, and the ones that make the API calls.
+These are the ones that are connected to the Redux store.
+
+- #### `src/fixtures/`
+
+Contains JSON files that mimic API responses, used for quicker development.
+These are used by `src/services/` to mock API responses.
 
 ## Guidelines
 
@@ -115,7 +142,7 @@ in more detail.
 
 ## Sources
 
-- [Jevelin - Mansory (WP Template)](https://jevelin.shufflehound.com/portfolio1/masonry-side-header/)
 - [Ford Motors - Basic Elements](http://www.lookandstyle.ford.com/cs/BlobServer?blobtable=MungoBlobs&blobcol=urldata&blobheadervalue1=attachment%3Bfilename%3D%22BasicElements_Aug_09a.pdf%22&blobheadervalue2=abinary%3Bcharset%3DUTF-8&blobheadername1=Content-Disposition&blobheadername2=MDT-Type&blobheader=application%2Fpdf&blobwhere=1214346775318&blobkey=id)
 - [Ford Motors - Brand Book](https://issuu.com/willzanette/docs/brandbook_ford)
 - [Ford Motors - Guidelines](https://logoblink.com/ford-guidelines-brand-book-pdf/)
+- [Jevelin - Mansory (WP Template)](https://jevelin.shufflehound.com/portfolio1/masonry-side-header/)
