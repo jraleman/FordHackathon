@@ -18,6 +18,8 @@
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-nodeunit": "^2.0.0",
     "grunt-contrib-uglify": "^3.4.0",
-    "grunt-uncss": "^0.8.5"
+    "grunt-uncss": "^0.8.5",
+    "postcss-uncss": "^0.16.1",
+    "uncss": "^0.16.2"
   }
 }
