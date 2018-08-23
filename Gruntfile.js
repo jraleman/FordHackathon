@@ -1,16 +1,14 @@
 module.exports = function (grunt) {
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        uncss: {
-            dist: {
-                files: {
-                    'tidy.css': ['public/index.html']
-                }
-            }
-        }
+        purifycss: {
+          options: {},
+          target: {
+            src: ['public/index.html'],
+            css: ['public/css/styles.css'],
+            dest: 'tmp/styles.css'
+          },
+        },
     });
-    // Register the tasks we need
-    grunt.loadNpmTasks('grunt-uncss');
-    // Define the default tasks
-    grunt.registerTask('default', ['uncss']);
+    grunt.loadNpmTasks('grunt-purifycss');
+    grunt.registerTask('default', ['purifycss']);
 }
