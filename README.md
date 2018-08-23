@@ -96,16 +96,19 @@ React app source code.
 
 - #### `src/components/`
 
-...
+All the stateless components will go here.
+These components should only take props.
 
 - #### `src/containers/`
 
-...
+The Container components go here.
+These are the stateful ones, and the ones that make the API calls.
+These are the ones that are connected to the Redux store.
 
 - #### `src/fixtures/`
 
 Contains JSON files that mimic API responses, used for quicker development.
-These are used by `src/services/` to mock API responses. 
+These are used by `src/services/` to mock API responses.
 
 ## Guidelines
 
