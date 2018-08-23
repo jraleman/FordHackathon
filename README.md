@@ -88,21 +88,21 @@ in more detail.
 
 #### `resources/`
 
-...
+Project resources, such as videos, photos, sketches, etc...
 
 #### `src/`
 
-...
+React app source code.
 
-#### `src/components/`
-
-...
-
-#### `src/containers/`
+- #### `src/components/`
 
 ...
 
-#### `src/fixtures/`
+- #### `src/containers/`
+
+...
+
+- #### `src/fixtures/`
 
 ...
 
