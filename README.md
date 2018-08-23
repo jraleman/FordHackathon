@@ -82,9 +82,29 @@ This is the main idea:
 Basic walkthrough of the project structure, describing the directories
 in more detail.
 
-```
-... wip
-```
+#### `public/`
+
+...
+
+#### `resources/`
+
+...
+
+#### `src/`
+
+...
+
+#### `src/components/`
+
+...
+
+#### `src/containers/`
+
+...
+
+#### `src/fixtures/`
+
+...
 
 ## Guidelines
 
