@@ -104,7 +104,8 @@ React app source code.
 
 - #### `src/fixtures/`
 
-...
+Contains JSON files that mimic API responses, used for quicker development.
+These are used by `src/services/` to mock API responses. 
 
 ## Guidelines
 
