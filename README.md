@@ -84,7 +84,8 @@ in more detail.
 
 #### `public/`
 
-...
+Divides what is *static* vs *dynamic* logic...
+Pretty much anything that is not used by the app when it compiles.
 
 #### `resources/`
 
