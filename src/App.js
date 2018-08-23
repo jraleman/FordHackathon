@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import RootContainer from './containers/RootContainer';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">
-            <code>RootContainer</code>
-          </h1>
-        </header>
+        <RootContainer />
       </div>
     );
   }

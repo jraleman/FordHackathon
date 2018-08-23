@@ -3,9 +3,8 @@ import React from 'react';
 class GridContainer extends React.Component {
   constructor (prop) {
     super(props);
-    this.props = {};
     this.state = {};
-    return l
+    return ;
   }
   render () {
     return (
