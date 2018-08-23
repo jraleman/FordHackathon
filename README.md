@@ -38,13 +38,16 @@ This is the main idea:
 ├── package.json
 ├── public/
 │   ├── css/
-│   │   └── styles.js
+│   │   ├── responsive.css
+│   │   └── styles.css
 │   ├── favicon.ico
 │   ├── index.html
 │   ├── js/
+│   │   ├── jquery-1.12.4.min.js
 │   │   └── scripts.js
 │   └── manifest.json
 ├── resources/
+│   ├── ford-motors-logo.png
 │   └── sketches/
 │       ├── ford-platform.pdf
 │       └── platform-ui.pdf
@@ -54,7 +57,6 @@ This is the main idea:
 │   │   └── GridItem/
 │   │       ├── GridItem.js
 │   │       └── index.js
-│   ├── config/
 │   ├── containers/
 │   │   ├── GridContainer/
 │   │   │   ├── GridContainer.js
