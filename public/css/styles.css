@@ -1,3 +1,470 @@
-/*
- stylezzz
-*/
+/*--------------------------------------------------
+    [TYPEFACE]
+----------------------------------------------------*/
+
+body h1,body h2,body h3,body h4,body h5,body h6 {
+  font-family: 'Montserrat';
+}
+
+/* Page on Scroll */
+
+.page-on-scroll .page-header {
+  background: #fff;
+  transition-duration: 100ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+.page-on-scroll .page-header .navbar {
+  background: #ffffff;
+}
+
+.page-header {
+  padding: 0;
+  margin: 0;
+  border-bottom: none;
+  /* Navbar */
+  /* Navbar Toggle */
+  /* Navbar Brand */
+  /* Navbar Nav */
+}
+
+.page-header .navbar {
+  border-radius: 0;
+  margin-bottom: 0;
+  background: transparent;
+  transition-duration: 100ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+.page-header .navbar-toggle {
+  border: none;
+  margin: 25px 15px 25px 0;
+}
+
+.page-header .navbar-toggle .icon-bar {
+  background: #0067B2;
+}
+
+.page-header .navbar-brand {
+  height: 82px;
+  max-height: 82px;
+  line-height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  transition-duration: 400ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+.page-header .navbar-brand .logo {
+  margin-top: 12.8px;
+}
+
+.page-header .navbar-brand .logo strong {
+  padding-right: 2px;
+}
+
+.page-header .navbar-brand img {
+  width: 115px;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.page-header .navbar-nav li {
+  padding: 25px 1px;
+  line-height: 20px;
+  transition-duration: 400ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+.page-header .navbar-nav li>a {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  /* color: #fff; */
+}
+
+.page-header .navbar-nav li.active>a {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.page-header .navbar-nav li.active>a,.page-header .navbar-nav li>a:hover {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-header .navbar-nav li>a:focus,.page-header .navbar-nav li>a:hover {
+  background: inherit;
+}
+
+/* Responsive code for max-width: 991px */
+
+@media (max-width: 991px) {
+  /* 991px */
+
+  .page-header .navbar-header {
+    float: none;
+  }
+
+  .page-header .navbar-toggle {
+    display: block;
+  }
+
+  .page-header .navbar-collapse.collapse {
+    display: none !important;
+  }
+
+  .page-header .navbar-collapse.collapse.in {
+    display: block !important;
+    overflow-y: auto !important;
+  }
+
+  .page-header .navbar-nav {
+    margin: 0;
+    float: none !important;
+  }
+
+  .page-header .navbar-nav>li {
+    float: none;
+  }
+}
+
+/* Stylesheet design for under max-width: 991px */
+
+@media (max-width: 991px) {
+  /* 991px */
+
+  body {
+    padding-top: 80px;
+  }
+
+  .page-header {
+    background: #fff;
+    /* Navbar Brand */
+  }
+
+  .page-header .navbar-fixed-top {
+    background: #fff;
+  }
+
+  .page-header .navbar-fixed-top .navbar-collapse {
+    max-height: 100%;
+    /* Navbar */
+  }
+
+  .page-header .navbar-fixed-top .navbar-collapse .navbar-nav li {
+    padding: 0;
+    float: none;
+  }
+
+  .page-header .navbar-fixed-top .navbar-collapse .navbar-nav li>a {
+    font-weight: 700;
+    color: #0067B2;
+  }
+
+  .page-header .navbar-fixed-top .navbar-collapse .navbar-nav li.active>a,  .page-header .navbar-fixed-top .navbar-collapse .navbar-nav li>a:hover {
+    color: #f78f1e;
+  }
+}
+
+/* Stylesheet design for above 992px */
+
+@media (min-width: 992px) {
+  /* 992px */
+
+  .page-header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 9999;
+    position: fixed;
+    /* Navbar Brand */
+    /* Navbar Nav */
+  }
+
+  .page-header .navbar-nav {
+    float: right;
+  }
+
+  .page-header .navbar-nav li>a {
+    padding: 5px 12px;
+  }
+}
+
+/* Stylesheet design on Scroll (Fixed Header) 992px */
+
+@media (min-width: 992px) {
+  /* 992px */
+
+  .page-on-scroll .page-header {
+    /* Navbar Brand */
+    /* Navbar Nav */
+  }
+
+  .page-on-scroll .page-header .navbar-brand {
+    height: 70px;
+    max-height: 70px;
+    line-height: 49px;
+    transition-duration: 400ms;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+  }
+
+  .page-on-scroll .page-header .navbar-nav li {
+    padding: 19px 1px;
+    transition-duration: 400ms;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+  }
+
+  .page-on-scroll .page-header .navbar-nav li>a {
+    color: #0067B2;
+  }
+
+  .page-on-scroll .page-header .navbar-nav li.active>a,  .page-on-scroll .page-header .navbar-nav li>a:hover {
+    border: 1px solid #e5e5e5;
+  }
+}
+
+/*--------------------------------------------------
+	[PAGE CONTENT]
+----------------------------------------------------*/
+
+/* Body */
+
+a:focus {
+  outline: none;
+}
+
+.page-header-fixed {
+  margin-top: 0;
+}
+
+/* Stylesheet design for above 992px */
+
+@media (min-width: 992px) {
+  /* 992px */
+}
+
+/*--------------------------------------------------
+	[PORTFOLIO]
+----------------------------------------------------*/
+
+.portfolio {
+  padding: 100px 0 100px 0;
+}
+
+/*--------------------------------------------------
+	[FOOTER]
+----------------------------------------------------*/
+
+.footer {
+  background: #2c3a46;
+  padding: 100px 0 100px 0;
+}
+
+/*--------------------------------------------------
+	[FOOTER COPYRIGHT]
+----------------------------------------------------*/
+
+.footer-copyright {
+  padding: 50px 0;
+  text-align: center;
+  background: #005596;
+}
+
+.footer-copyright h3 {
+  font-size: 30px;
+  margin: 0 0 40px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.footer-copyright p {
+  margin-bottom: 0;
+  color: #ffffff;
+}
+
+.footer-copyright .copyright-socials {
+  padding: 0;
+  margin-bottom: 40px;
+  list-style: none;
+}
+
+.footer-copyright .copyright-socials li {
+  padding: 0 3px;
+  display: inline-block;
+}
+
+.footer-copyright .copyright-socials li i {
+  width: 35px;
+  height: 35px;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  background: #f78f1e;
+  display: inline-block;
+}
+
+.footer-copyright .copyright-socials li i:hover {
+  background: #949599;
+  color: #fff;
+  transition-duration: 400ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+/*--------------------------------------------------
+	[CUBEPORTFOLIO]
+----------------------------------------------------*/
+
+/* Popup Wrap */
+
+.cube-portfolio {
+  /* Filter */
+  /* Caption Effects */
+  /* Portfolio Icons */
+}
+
+#grid-container {
+  max-width: 85% !important;
+}
+
+.cube-portfolio .cbp-l-filters-alignCenter .cbp-filter-item {
+  font-size: 14px;
+  padding: 6px 15px;
+  text-transform: uppercase;
+  color: #0067B2;
+}
+
+.cube-portfolio .cbp-l-filters-alignCenter .cbp-filter-item:hover {
+  color: #fff;
+  background: #f78f1e;
+}
+
+.cube-portfolio .cbp-l-filters-alignCenter .cbp-filter-item-active {
+  color: #fff;
+  background: #0067B2;
+}
+
+.cube-portfolio .cbp-title {
+  text-align: center;
+}
+
+.cube-portfolio .cbp-title strong {
+  padding-right: 2px;
+}
+
+.cube-portfolio .cbp-caption .cbp-caption-hover-gradient {
+  position: relative;
+}
+
+.cube-portfolio .cbp-caption .cbp-caption-hover-gradient:before {
+  width: 100%;
+  height: 100%;
+  content: " ";
+  position: absolute;
+  transition-duration: 300ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+.cube-portfolio .cbp-caption .cbp-caption-hover-gradient:after {
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  content: " ";
+  position: absolute;
+  transition-duration: 300ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+.cube-portfolio .cbp-caption:hover .cbp-caption-hover-gradient:before {
+  opacity: .8;
+  background: #0067B2;
+}
+
+.cube-portfolio .cbp-caption:hover .cbp-caption-hover-gradient:after {
+  border: 2px solid #fff;
+}
+
+.cube-portfolio .cbp-caption .cbp-caption-activeWrap {
+  background: inherit;
+}
+
+.cube-portfolio .portfolio-icons i {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 50%;
+  display: inline-block;
+  color: #0067B2;
+  background: #fff;
+  transition-duration: 300ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+.cube-portfolio .portfolio-icons i:hover {
+  color: #fff;
+  background: #f78f1e;
+  transition-duration: 300ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+/*--------------------------------------------------
+    [Bootstrap Carousel]
+----------------------------------------------------*/
+
+/* Set displays an element as in inline-level flex container */
+
+.carousel {
+  /* Carousel Item Background Images */
+  /* Carousel Titles */
+  /* Carousel Subtitles */
+  /* Carousel Positions */
+  /* Carousel Animation Delay */
+}
+
+.carousel .carousel-caption {
+  left: auto;
+  right: auto;
+  bottom: auto;
+  text-shadow: none;
+  text-align: inherit;
+  padding: 0;
+}
+
+.carousel .item {
+  width: 100%;
+  height: 100%;
+  min-height: 580px;
+}
+
+.carousel .carousel-item-one {
+  background: url(../../../assets/onepage2/img/bg/bg_slider1.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Stylesheet design for under max-width: 768px */
+
+@media (max-width: 768px) {
+  /* 768px */
+}
