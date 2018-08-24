@@ -145,4 +145,4 @@ These are used by `src/services/` to mock API responses.
 - [Ford Motors - Basic Elements](http://www.lookandstyle.ford.com/cs/BlobServer?blobtable=MungoBlobs&blobcol=urldata&blobheadervalue1=attachment%3Bfilename%3D%22BasicElements_Aug_09a.pdf%22&blobheadervalue2=abinary%3Bcharset%3DUTF-8&blobheadername1=Content-Disposition&blobheadername2=MDT-Type&blobheader=application%2Fpdf&blobwhere=1214346775318&blobkey=id)
 - [Ford Motors - Brand Book](https://issuu.com/willzanette/docs/brandbook_ford)
 - [Ford Motors - Guidelines](https://logoblink.com/ford-guidelines-brand-book-pdf/)
-- [Jevelin - Mansory (WP Template)](https://jevelin.shufflehound.com/portfolio1/masonry-side-header/)
+- [MetroCube - HTML5 Theme](https://github.com/jraleman)
