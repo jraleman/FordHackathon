@@ -263,6 +263,7 @@ a:focus {
   padding: 100px 0 100px 0;
 }
 
+
 /*--------------------------------------------------
 	[FOOTER]
 ----------------------------------------------------*/
@@ -292,6 +293,18 @@ a:focus {
 .footer-copyright p {
   margin-bottom: 0;
   color: #ffffff;
+}
+
+.footer-copyright p a {
+  color: #ffffff;
+}
+
+.footer-copyright p a:hover {
+  color: #c4c4c4;
+}
+
+.footer-copyright p strong a {
+  color: #f78f1e;
 }
 
 .footer-copyright .copyright-socials {
@@ -336,8 +349,13 @@ a:focus {
   /* Portfolio Icons */
 }
 
-#grid-container {
-  max-width: 85% !important;
+.cube-portfolio .heading {
+  text-align: right;
+  margin-right: 7.5%;
+}
+
+.cube-portfolio .heading strong {
+  padding-right: 2px;
 }
 
 .cube-portfolio .cbp-l-filters-alignCenter .cbp-filter-item {
@@ -426,6 +444,10 @@ a:focus {
   transition-duration: 300ms;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+#grid-container {
+  max-width: 85% !important;
 }
 
 /*--------------------------------------------------
