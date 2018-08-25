@@ -5,14 +5,15 @@ var headers = {
 		'Content-Type': 'application/json'
 };
 
-var dataString = '{"login_name": "gabriel", "username": "gabriel", "email": "test1@gmail.com", "password": "gabriel"}';
+var dataString = '{"name": "testing_repo_vaina", "description": "simple_1", "private": true}';
 
+// fill this is a modular way to fill the information depending on the user
 var options = {
-url: 'http://' + external_ip + ':3000/api/v1/admin/users',
-	 method: 'POST',
-	 headers: headers,
-	 body: dataString,
-	 auth: {
+	url: 'http://' + external_ip + ':3000/api/v1/admin/users/regien/repos',
+	method: 'POST',
+	headers: headers,
+	body: dataString,
+	auth: {
 			 'user': 'regien',
 			 'pass': '@testingrepo1'
 	 }

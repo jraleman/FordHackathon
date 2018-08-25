@@ -40,6 +40,7 @@ const	get_programming_leanguage = (type) => {
 
 /*
 ** TODO; possibly changing of console.log() -> process.stdout.write();
+** not fully done
 */
 dispatcher.init = () => {
 	let info = {};
@@ -63,3 +64,7 @@ dispatcher.init = () => {
 	// doing the initial setup let you test the project and get the
 	// GUI get extra information
 }
+
+
+
+dispatcher.
