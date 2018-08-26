@@ -9,9 +9,9 @@ class RootContainer extends React.Component {
   }
   render () {
     return (
-      <div>
+      <React.Fragment>
         <GridContainer />
-      </div>
+      </React.Fragment>
     );
   }
 }
