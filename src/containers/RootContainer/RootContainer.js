@@ -1,4 +1,5 @@
 import React from 'react';
+import GridContainer from '../GridContainer';
 
 class RootContainer extends React.Component {
   constructor (props) {
@@ -9,7 +10,7 @@ class RootContainer extends React.Component {
   render () {
     return (
       <div>
-          <p>{ "RootContainer" }</p>
+        <GridContainer />
       </div>
     );
   }
