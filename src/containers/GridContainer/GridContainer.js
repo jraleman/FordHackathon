@@ -1,5 +1,7 @@
 import React from 'react';
 import GridItem from '../../components/GridItem';
+import GridTitle from '../../components/GridTitle';
+import GridFilters from '../../components/GridFilters';
 
 const appsList = [
   {
@@ -43,6 +45,11 @@ class GridContainer extends React.Component {
   render () {
     return (
       <React.Fragment>
+        <GridTitle
+          leftSide={ "Ford App" }
+          rightSide={ "Store" }
+        />
+        <GridFilters />
         <div id="grid-container" className="cbp-l-grid-agency">
           <GridItem
             icon={ "https://picsum.photos/g/592/592/?random" }
