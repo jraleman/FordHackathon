@@ -45,7 +45,9 @@ app.get("/", (req, res, next) => {
 });
 
 
-// CREATING A REPO "/create/repo"
+/*
+**		CREATING A REPO "/create/repo"
+*/
 
 var	create_options_create_repo = (info, auth) => {
 	let	data_string = JSON.stringify(info);
@@ -101,8 +103,6 @@ app.post("/create/repo", async (req, res, next) => {
 	var	info = {};
 	var	auth = {};
 	info.status_code = false;
-//	let	json_answer;
-//	var	sender;
 	var	res_api;
 
 	auth.username = req.query.username;
@@ -110,75 +110,31 @@ app.post("/create/repo", async (req, res, next) => {
 	info.name = req.query.name;
 	info.description = req.query.description;
 	if (req.query.is_private === "true")
-		info.is_private = true;
+		info.private = true;
 	else
-		info.is_private = false;
+		info.private = false;
 	try {
 		res_api = await get_res_from_api(info, auth);
-		if (info.status_code)
-			;
-//			res.sendStatus(201);
-		else
-			;
-//			res.sendStatus(422);
 		console.log("printing sender");
 		console.log(info.ender);
-		res.send(JSON.stringify(info.sender));
+		res.status(res_api.statusCode).send(JSON.stringify(info.sender));
 		console.log("POST request to -> /create/repo");	
 		res.end();
 		
 	} catch (error) {
 		console.log("OH noo an error ocurred " + error);
-		res.send(info.sender);
+		res.status(res_api.statusCode).send(info.sender);
 		res.end();
 	}
 });
 
-// USING ASYNC - need to specify try { } catch { }
-/*
-app.post("/create/repo", async (req, res, next) => {
-	// implementing user information
-	var	info = {};
-	var	auth = {};
-	var	status_code = false;
-//	let	json_answer;
-	var	sender;
 
-	auth.username = req.query.username;
-	auth.password = req.query.password;
-	info.name = req.query.name;
-	info.description = req.query.description;
-	if (req.query.is_private === "true")
-		info.is_private = true;
-	else
-		info.is_private = false;
 
-	// SUCCES 201 code - FAILURE 422 code
-	request(create_options_create_repo(info, auth), (error, res, body) => {
-		if (res.statusCode === 201)
-			status_code = true;
-		console.log("status: " + res.statusCode);
-		console.log(JSON.parse(res.body));
-//		json_answer = JSON.parse(res.body);
-		if (status_code)
-			sender = parse_repo_response(JSON.parse(res.body));
-		else
-			sender = JSON.parse(res.body);
-		console.log("Printing body value (not res): " + body);
-		console.log(sender);
-	});
-	if (status_code)
-		res.sendStatus(201);
-	else
-		res.sendStatus(422);
-	console.log("printing sender");
-	console.log(sender);
-	res.send(JSON.stringify(sender));
-	console.log("POST request to -> /create/repo");	
-	res.end();
-});
-*/
 // CREATE AN USER "/register"
+
+var	create_option_register = (info, auth) => {
+	let	data_string = JSON.stringify(info);
+}
 
 app.post("/register", (req, res, next) => {
 	let	username = req.query.username;
