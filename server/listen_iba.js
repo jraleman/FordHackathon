@@ -76,7 +76,67 @@ var	parse_repo_response = (json_answer) => {
 	return (info);
 }
 
-app.post("/create/repo", (req, res, next) => {
+// info.status_code = true; <- make this a boolean
+var	get_res_from_api = (info, auth) => {
+	return new Promise( (resolve, reject) => {
+		request(create_options_create_repo(info, auth), (error, res, body) => {
+			if (res.statusCode === 201)
+				info.status_code = true;
+			console.log("status: " + res.statusCode);
+			console.log(JSON.parse(res.body));
+			if (info.status_code)
+				info.sender = parse_repo_response(JSON.parse(res.body));
+			else
+				info.sender = JSON.parse(res.body);
+			console.log("Printing body value (not res): " + body);
+			console.log(info.sender);
+			if (error)
+				reject(error);
+			resolve(res);
+		});
+	});
+}
+
+app.post("/create/repo", async (req, res, next) => {
+	var	info = {};
+	var	auth = {};
+	info.status_code = false;
+//	let	json_answer;
+//	var	sender;
+	var	res_api;
+
+	auth.username = req.query.username;
+	auth.password = req.query.password;
+	info.name = req.query.name;
+	info.description = req.query.description;
+	if (req.query.is_private === "true")
+		info.is_private = true;
+	else
+		info.is_private = false;
+	try {
+		res_api = await get_res_from_api(info, auth);
+		if (info.status_code)
+			;
+//			res.sendStatus(201);
+		else
+			;
+//			res.sendStatus(422);
+		console.log("printing sender");
+		console.log(info.ender);
+		res.send(JSON.stringify(info.sender));
+		console.log("POST request to -> /create/repo");	
+		res.end();
+		
+	} catch (error) {
+		console.log("OH noo an error ocurred " + error);
+		res.send(info.sender);
+		res.end();
+	}
+});
+
+// USING ASYNC - need to specify try { } catch { }
+/*
+app.post("/create/repo", async (req, res, next) => {
 	// implementing user information
 	var	info = {};
 	var	auth = {};
@@ -95,7 +155,7 @@ app.post("/create/repo", (req, res, next) => {
 
 	// SUCCES 201 code - FAILURE 422 code
 	request(create_options_create_repo(info, auth), (error, res, body) => {
-		if (res.StatusCode === 201)
+		if (res.statusCode === 201)
 			status_code = true;
 		console.log("status: " + res.statusCode);
 		console.log(JSON.parse(res.body));
@@ -117,7 +177,7 @@ app.post("/create/repo", (req, res, next) => {
 	console.log("POST request to -> /create/repo");	
 	res.end();
 });
-
+*/
 // CREATE AN USER "/register"
 
 app.post("/register", (req, res, next) => {
