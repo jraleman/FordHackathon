@@ -3,7 +3,7 @@ import React from 'react';
 class GridItem extends React.Component {
   constructor (props) {
     super(props);
-    this._appTitleStron = this.props.titleStrong;
+    this._appTitleStrong = this.props.titleStrong;
     this._appTitleLight = this.props.titleLight;
     this._appTitle = this.props.titleStrong + this.props.titleLight;
     this._appIcon = this.props.icon;
@@ -29,10 +29,10 @@ class GridItem extends React.Component {
             <div className="cbp-caption-activeWrap">
               <div className="cbp-l-caption-alignCenter">
                 <div className="cbp-l-caption-body portfolio-icons">
+                  { /* Check 'data-title="ItemOne"' maybe it can help me fix nostromo... { data-title }, camelCase?  */ }
                   <a
                     href={ this._appPreview }
                     className="cbp-lightbox"
-                    { /* Check the line below, maybe it can help me fix nostromo... { data-title }, camelCase?  */ }
                     data-title="ItemOne"
                   >
                     <i className="fa fa-info"></i>
