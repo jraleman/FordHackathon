@@ -21,6 +21,10 @@ var external_ip = "35.193.149.248";
 var headers = {
 		'Content-Type': 'application/json'
 };
+var	admin = {
+	user: "regien",
+	pass: "@testingrepo1"
+};
 
 /*
 ** consider moving every actions into a log file
@@ -105,6 +109,7 @@ app.post("/create/repo", async (req, res, next) => {
 	info.status_code = false;
 	var	res_api;
 
+	console.log("POST request to -> /create/repo");	
 	auth.username = req.query.username;
 	auth.password = req.query.password;
 	info.name = req.query.name;
@@ -116,9 +121,8 @@ app.post("/create/repo", async (req, res, next) => {
 	try {
 		res_api = await get_res_from_api(info, auth);
 		console.log("printing sender");
-		console.log(info.ender);
+		console.log(info.sender);
 		res.status(res_api.statusCode).send(JSON.stringify(info.sender));
-		console.log("POST request to -> /create/repo");	
 		res.end();
 		
 	} catch (error) {
@@ -130,21 +134,67 @@ app.post("/create/repo", async (req, res, next) => {
 
 
 
-// CREATE AN USER "/register"
+/*
+**		CREATE AN USER "/register"
+** need:
+** LOGIN_NAME - USERNAME - EMAIL - PASSWORD
+*/
+
+
 
 var	create_option_register = (info, auth) => {
 	let	data_string = JSON.stringify(info);
+	let options = {
+		url: 'http://' + external_ip + ':3000/api/v1/admin/users',
+		method: 'POST',
+		headers: headers,
+		body: data_string,
+		auth: {
+			 'user': admin.user ,
+			 'pass': admin.pass
+		 }
+	};
+	return (options);
 }
 
-app.post("/register", (req, res, next) => {
-	let	username = req.query.username;
-	let	password = req.query.password;
+var	get_res_from_api_modular = (info, auth, func_options) => {
+	return new Promise( (resolve, reject) => {
+		request(func_options(info, auth), (error, res, body) => {
+			if (res.statusCode === 201)
+				info.status_code = true;
+			console.log("status: " + res.statusCode);
+			info.sender = JSON.parse(res.body);
+			console.log("Printing body value (not res): " + body);
+			console.log(info.sender);
+			if (error)
+				reject(error);
+			resolve(res);
+		});
+	});
+}
+
+app.post("/register", async (req, res, next) => {
+	let	info = {};
+	let	res_api;
+
+	info.username = req.query.username;
+	info.password = req.query.password;
+	info.login_name = req.query.username;
+	info.email = req.query.email;
 
 	console.log("POST request to -> /register");
-	console.log(`user = ${username} & pass = ${password}`);
-	// implement validation with gogs-client
-	//
-	res.end();
+//	console.log(`user = ${username} & pass = ${password}`); // nuke_me
+	try {
+		res_api = await get_res_from_api_modular(info, admin, create_option_register);
+		console.log("printing sender");
+		console.log(info.sender);
+		res.status(res_api.statusCode).send(JSON.stringify(info.sender));
+		res.end();
+	} catch(error) {
+		console.log("OH noo an error ocurred " + error);
+		res.status(res_api.statusCode).send(info.sender);
+		res.end();
+	}
 });
 
 app.listen(4500, () => {
