@@ -1,7 +1,26 @@
 import React from 'react';
 
+const appsList = [
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {}
+];
+
 class GridContainer extends React.Component {
-  constructor (prop) {
+  constructor (props) {
     super(props);
     this.state = {
       appsCount: appsList.length,
@@ -19,3 +38,5 @@ class GridContainer extends React.Component {
     );
   }
 }
+
+export default GridContainer;
