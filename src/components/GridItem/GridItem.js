@@ -9,6 +9,7 @@ class GridItem extends React.Component {
     this._appIcon = this.props.icon;
     this._appDescription = this.props.desc;
     this._appPreview = this.props.preview;
+    this._appCategory = this.props.category;
     this._termOfServices = this.props.tos;
     this._privacyPolicy = this.props.pc;
     this._onPress = this.props.onPress;
@@ -18,7 +19,7 @@ class GridItem extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <div className="cbp-item col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 category1">
+        <div className={ "cbp-item col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 " + this._appCategory }>
           <div className="cbp-caption">
             <div className="cbp-caption-hover-gradient">
               <img
@@ -29,7 +30,6 @@ class GridItem extends React.Component {
             <div className="cbp-caption-activeWrap">
               <div className="cbp-l-caption-alignCenter">
                 <div className="cbp-l-caption-body portfolio-icons">
-                  { /* Check 'data-title="ItemOne"' maybe it can help me fix nostromo... { data-title }, camelCase?  */ }
                   <a
                     href={ this._appPreview }
                     className="cbp-lightbox"
@@ -37,7 +37,6 @@ class GridItem extends React.Component {
                   >
                     <i className="fa fa-info"></i>
                   </a>
-                  { /* Open modal here... update MetroCube template to add Modal */ }
                   <a href="#">
                     <i className="fa fa-download"></i>
                   </a>
