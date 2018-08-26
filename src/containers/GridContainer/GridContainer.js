@@ -46,46 +46,50 @@ class GridContainer extends React.Component {
     return (
       <React.Fragment>
         <GridTitle
-          leftSide={ "Ford App" }
+          leftSide={ "App" }
           rightSide={ "Store" }
         />
         <GridFilters />
-        <div id="grid-container" className="cbp-l-grid-agency">
-          <GridItem
-            icon={ "https://picsum.photos/g/592/592/?random" }
-            preview={ "https://picsum.photos/g/592/592/?random" }
-            titleStrong="Item"
-            titleLight="One"
-            category="category1"
-          />
-          <GridItem
-            icon={ "https://picsum.photos/g/592/592/?random" }
-            preview={ "https://picsum.photos/g/592/592/?random" }
-            titleStrong="Item"
-            titleLight="One"
-            category="category1"
-          />
-          <GridItem
-            icon={ "https://picsum.photos/g/592/592/?random" }
-            preview={ "https://picsum.photos/g/592/592/?random" }
-            titleStrong="Item"
-            titleLight="One"
-            category="category1"
-          />
-          <GridItem
-            icon={ "https://picsum.photos/g/592/592/?random" }
-            preview={ "https://picsum.photos/g/592/592/?random" }
-            titleStrong="Item"
-            titleLight="One"
-            category="category1"
-          />
-          <GridItem
-            icon={ "https://picsum.photos/g/592/592/?random" }
-            preview={ "https://picsum.photos/g/592/592/?random" }
-            titleStrong="Item"
-            titleLight="One"
-            category="category1"
-          />
+        <div className="row">
+          <div className="col-md-12">
+            <div id="grid-container" className="cbp-l-grid-agency">
+              <GridItem
+                icon={ "https://picsum.photos/g/592/592/?random" }
+                preview={ "https://picsum.photos/g/592/592/?random" }
+                titleStrong="Item"
+                titleLight="One"
+                category="category1"
+              />
+              <GridItem
+                icon={ "https://picsum.photos/g/593/593/?random" }
+                preview={ "https://picsum.photos/g/593/593/?random" }
+                titleStrong="Item"
+                titleLight="Two"
+                category="category2"
+              />
+              <GridItem
+                icon={ "https://picsum.photos/g/594/594/?random" }
+                preview={ "https://picsum.photos/g/594/594/?random" }
+                titleStrong="Item"
+                titleLight="Three"
+                category="category3"
+              />
+              <GridItem
+                icon={ "https://picsum.photos/g/595/595/?random" }
+                preview={ "https://picsum.photos/g/595/595/?random" }
+                titleStrong="Item"
+                titleLight="Four"
+                category="category4"
+              />
+              <GridItem
+                icon={ "https://picsum.photos/g/596/596/?random" }
+                preview={ "https://picsum.photos/g/596/596/?random" }
+                titleStrong="Item"
+                titleLight="Five"
+                category="category1"
+              />
+            </div>
+          </div>
         </div>
       </React.Fragment>
     );
