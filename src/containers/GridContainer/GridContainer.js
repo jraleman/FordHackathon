@@ -42,9 +42,45 @@ class GridContainer extends React.Component {
   }
   render () {
     return (
-      <div>
-        <p>{ "GridContainer" }</p>
-      </div>
+      <React.Fragment>
+        <div id="grid-container" className="cbp-l-grid-agency">
+          <GridItem
+            icon={ "https://picsum.photos/g/592/592/?random" }
+            preview={ "https://picsum.photos/g/592/592/?random" }
+            titleStrong="Item"
+            titleLight="One"
+            category="category1"
+          />
+          <GridItem
+            icon={ "https://picsum.photos/g/592/592/?random" }
+            preview={ "https://picsum.photos/g/592/592/?random" }
+            titleStrong="Item"
+            titleLight="One"
+            category="category1"
+          />
+          <GridItem
+            icon={ "https://picsum.photos/g/592/592/?random" }
+            preview={ "https://picsum.photos/g/592/592/?random" }
+            titleStrong="Item"
+            titleLight="One"
+            category="category1"
+          />
+          <GridItem
+            icon={ "https://picsum.photos/g/592/592/?random" }
+            preview={ "https://picsum.photos/g/592/592/?random" }
+            titleStrong="Item"
+            titleLight="One"
+            category="category1"
+          />
+          <GridItem
+            icon={ "https://picsum.photos/g/592/592/?random" }
+            preview={ "https://picsum.photos/g/592/592/?random" }
+            titleStrong="Item"
+            titleLight="One"
+            category="category1"
+          />
+        </div>
+      </React.Fragment>
     );
   }
 }
