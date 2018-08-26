@@ -32,7 +32,7 @@ class GridItem extends React.Component {
                   <a
                     href={ this._appPreview }
                     className="cbp-lightbox"
-                    { }/* Check the line below, maybe it can help me fix nostromo... { data-title }, camelCase?  */ }
+                    { /* Check the line below, maybe it can help me fix nostromo... { data-title }, camelCase?  */ }
                     data-title="ItemOne"
                   >
                     <i className="fa fa-info"></i>
@@ -46,8 +46,7 @@ class GridItem extends React.Component {
             </div>
           </div>
           <h4 className="cbp-title">
-            <strong>{ this._appTitleStrong }</strong>
-            { this._appTitleLight }
+            <strong>{ this._appTitleStrong }</strong>{ this._appTitleLight }
           </h4>
         </div>
       </React.Fragment>
