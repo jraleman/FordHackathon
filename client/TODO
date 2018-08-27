@@ -1,0 +1,56 @@
+Intentar seguir un norminette decente
+terminar ESKELETO
+
+prototype json init repo
+
+borrador:
+{
+  "name": "test_api",
+  "version": "1.0.0", //probably not neccesary
+  "description": "",
+  "main": "ford.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "", //probably
+  "license": "ISC", // maybe type of user
+}
+
+limpio:
+{
+  "name": "name_of the_project",
+  "version": "1.0.0",
+  "description": "read the README",
+  "pro_leanguage": "programming_leanguage",
+  "main": "point_out_your_code.py",
+  "scripts": {
+    "test": "make execute_yourself"
+  },
+  "author": "user_or_ORG", //probably
+  "license": "ISC", // maybe type of user
+}
+
+// get icon
+// description necessary
+// name is basically title
+^ this json is gonna fill your information for making a pretty app store
+
+- Ramon:
+	terminar un readme decente para presentar con el github
+
+	tener dos directories sobre las dos cosas que contienen codigo y el cliente
+
+GOGS -> FETCHER -> Client / GUI-Client
+
+GOGS: servidor en el cloud;
+	- manage:
+		user
+		accounts
+		repos
+	- 
+
+FETCHER:
+	funciona con una cuenta de administrador - usualmente usuario 1
+	
+	you give input throught query request and it return you stuff in the body
+	with hopefully the right values or error messages if needed
