@@ -1,5 +1,9 @@
 # MetroCube App Store :: FordHackathon
 
+[![RN-Version](https://img.shields.io/badge/react.js-16.4.2-01babc.svg)](https://github.com/facebook/react/releases/tag/v16.4.2)
+[![GitHub Stars](https://img.shields.io/github/stars/jraleman/FordHackathon.svg)](https://github.com/jraleman/FordHackathon/stars)
+[![GitHub Issues](https://img.shields.io/github/issues/jraleman/FordHackathon.svg)](https://github.com/jraleman/FordHackathon/issues)
+
 ![ford-motors-logo](resources/ford-motors-logo.png)
 
 ## Setup
