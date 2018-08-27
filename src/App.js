@@ -4,9 +4,9 @@ import RootContainer from './containers/RootContainer';
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
+      <React.Fragment>
         <RootContainer />
-      </div>
+      </React.Fragment>
     );
   }
 }
