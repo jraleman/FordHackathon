@@ -43,6 +43,9 @@ class GridContainer extends React.Component {
     this.state.toggle = appsList.map(() => false);
     return ;
   }
+  componentDidMount () {
+    getResponse('/users');
+  }
   render () {
     return (
       <React.Fragment>
