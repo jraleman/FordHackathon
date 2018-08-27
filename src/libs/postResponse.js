@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const baseUrl = 'https://jsonplaceholder.typicode.com';
+const baseUrl = 'http://35.193.149.248:3000/api/v1/admin';
 
-export default function getResponse (endPoint) {
+export default function postResponse (endPoint, bodyData) {
   console.log('Getting response from: ' + endPoint);
-  axios.get(baseUrl + endPoint)
+  axios.post(baseUrl + endPoint, bodyData)
   .then(function (response) {
     console.log(response.data);
   })
