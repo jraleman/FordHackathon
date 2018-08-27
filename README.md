@@ -213,6 +213,12 @@ It can be innovative or it might just get the job done.
 ![#D6DA08](http://via.placeholder.com/150/d6da08/000000?text=D6DA08)
 ![#1EF3F7](http://via.placeholder.com/150/1ef3f7/000000?text=1EF3F7)
 
+#### Typeface
+
+**Montserrat**
+
+![montserrat-typeface](resources/fonts/montserrat.jpg)
+
 ## TODO
 
 - [ ] Integrate `settings` option, save offline data
