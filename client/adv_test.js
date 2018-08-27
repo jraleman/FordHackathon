@@ -5,6 +5,16 @@ var	readline = require("readline"); // trying out a new module
 var	fs = require("fs");
 var	usages = require("./usage_cli.js");
 var	readlineSync = require("readline-sync");
+var	request = require("request");
+var	exec = require("child_process").exec;
+
+/*
+** General information
+*/
+
+var	gogs_api_link = "http://35.193.149.248";
+var api_link = "localhost";
+var	user_info_path = process.env.HOME + "/.info_login"
 
 /*
 ** TODO: Pass this in a README
@@ -52,16 +62,33 @@ var	commands = [
 	"init"
 ];
 
-// put everything inside here maybe diferent file
-
 
 /*
-const	user_data_exist = () => {
-	
-}
+** LOGIN COMMAND
 */
 
+var	create_options_verify_user = (info) => {
+	let	query = `/?username=${info.username}&password=${info.password}`;
+	let	options = {
+		url: 'http://' + api_link + ':4500/user/info' + query,
+		auth: {
+			 'user': info.username ,
+			 'pass': info.password
+		 }
+	};
+	return (options);
+}
 
+var	verify_user = (options) => {
+	return new Promise ( (resolve, reject) => {
+		request(options, (error, res, body) => {
+			if (error || res.statusCode === 404)
+				reject(error);
+			console.log(body);
+			resolve(res);
+		});
+	});
+}
 
 /*
 ** Not perfect, replace with vanilla way to do it
@@ -70,30 +97,125 @@ const	user_data_exist = () => {
 ** TODO:
 ** CHECK IF USER EXIST or is invalid
 */
-const get_user_data = () => {
+const get_user_data = async () => {
 	let info = {};
 	let is_data_valid = false;
+	let options;
+	let res_api;
+	let res_body_parse;
 
-	let username = readlineSync.question("Username: ");
-	console.log(username);
 
-	let password = readlineSync.question("Password: ", {
+	info.username = readlineSync.question("Username: ");
+//	console.log(username);
+
+	info.password = readlineSync.question("Password: ", {
 		hideEchoBack: true
 	});
-	console.log(`Esta is the password ${password}`);
+//	console.log(`Esta is the password ${password}`);
 	
-	// do verification with intermediate API
-	info.username = username;
-	info.password = password;
-	
-	let stringinfo = JSON.stringify(info, null, 2);
-	// check if file exist or not and proceed with login
-	// if data invalid dont save it
-	if (is_data_valid) {
-		fs.writeFile(process.env.HOME + "/.info_something", stringinfo, (err) => {
-			if (err)
-				console.log(err);
+	options = create_options_verify_user(info);
+	try {
+		res_api = await verify_user(options);
+		res_body_parse = JSON.parse(res_api.body);
+		console.log(res_body_parse);
+		if (res_body_parse.email === "") {
+			console.log("invalid password");
+			process.exit();
+		}
+		let stringinfo = JSON.stringify(info, null, 2);
+		is_data_valid = true;
+		if (is_data_valid) {
+			fs.writeFile(process.env.HOME + "/.info_login", stringinfo, (err) => {
+				if (err)
+					console.log(err);
+			});
+			console.log("succesfull login!\ninformation has been saved in ~/.info_login");
+	}
+	} catch(error) {
+		console.log("Username doesn't exist");
+		process.exit();
+	}
+
+}
+
+/*
+** CREATE COMMAND
+** under actual login user
+*/
+
+var	create_options_repo = (info, auth) => {
+	let	auth_query = `/?username=${auth.username}&password=${auth.password}`;
+	let	data_query = `&name=${info.name}&description=${info.description}`;
+	data_query += `&is_private=${info.is_private}`;
+	let	query = auth_query + data_query;
+	let	options = {
+		url: 'http://' + api_link + ':4500/create/repo' + query,
+		method: "POST"
+	};
+	return (options);
+}
+
+var	api_create_repo = (options) => {
+	return new Promise ( (resolve, reject) => {
+		request(options, (error, res, body) => {
+			console.log(res.statusCode);
+			if (error || res.statusCode === 404)
+				reject(error);
+			console.log(body);
+			resolve(res);
 		});
+	});
+}
+
+var	create_repository = async (argv) => {
+	let		auth_info = fs.readFileSync(user_info_path).toString();
+	let		repo_info = {};
+	let		res_api;
+	let		options;
+	let		body_res;
+	let		execution_line;
+
+	auth_info = JSON.parse(auth_info);
+	if (auth_info === "undefined" || auth_info.username === "undefined" || auth_info.password === "undefined") {
+		console.log ("User has not login, use 'ford_app login' to use this service");
+		process.exit();
+	}
+//	repo_info.name = readlineSync.question("Repository name: ");
+	if (argv.length != 4) {
+		console.log("ussage:");
+		console.log(argv[1] + " create repo_name");
+		process.exit();
+	}
+	repo_info.name = argv[3];
+	repo_info.description = readlineSync.question("Description :");
+	repo_info.is_private = readlineSync.question("private: (yes/no)");
+	if (repo_info.is_private === "y" || repo_info.is_private === "yes")
+		repo_info.is_private = "true";
+	else
+		repo_info.is_private = "false";
+	options = create_options_repo(repo_info, auth_info);
+
+	try {
+		res_api = await api_create_repo(options);
+		if (res_api.statusCode === 422) {
+			console.error("Repository already exist");
+			process.exit();
+		}
+		console.log(res_api.statusCode);
+		body_res = JSON.parse(res_api.body);
+		console.log(gogs_api_link  + body_res.clone_url.toString().substr(20));
+		body_res.clone_url = gogs_api_link  + body_res.clone_url.toString().substr(20);
+		execution_line = "mkdir " + argv[3] + "; cd " + argv[3] + "; git init ;"
+		execution_line += " git remote add origin " + body_res.clone_url;
+		exec(execution_line , (err, stdout) => {
+			if (err)
+				throw err;
+		});
+		// then initiate repo
+		// git init -> add remotes -> done, happy coding
+	} catch(error) {
+		console.log("an error has ocurred: " + error);
+		process.exit();
 	}
 }
 
@@ -123,7 +245,7 @@ const	execute_function = (i) => {
 	if (i === 0)
 		get_user_data();
 	else if (i === 1)
-		;
+		create_repository(argv);
 	else if (i === 2)
 		;
 }

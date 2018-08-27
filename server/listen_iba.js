@@ -56,7 +56,7 @@ app.get("/", (req, res, next) => {
 var	create_options_create_repo = (info, auth) => {
 	let	data_string = JSON.stringify(info);
 	let	options = {
-		url: 'http://' + external_ip + ':3000/api/v1/admin/users/regien/repos',
+		url: 'http://' + external_ip + ':3000/api/v1/admin/users/' + auth.username + '/repos',
 		method: 'POST',
 		headers: headers,
 		body: data_string,
@@ -173,7 +173,7 @@ var	get_res_from_api_modular = (info, auth, func_options) => {
 	});
 }
 
-app.post("/register", async (req, res, next) => {
+app.post("create/user", async (req, res, next) => {
 	let	info = {};
 	let	res_api;
 
@@ -183,7 +183,6 @@ app.post("/register", async (req, res, next) => {
 	info.email = req.query.email;
 
 	console.log("POST request to -> /register");
-//	console.log(`user = ${username} & pass = ${password}`); // nuke_me
 	try {
 		res_api = await get_res_from_api_modular(info, admin, create_option_register);
 		console.log("printing sender");
@@ -197,13 +196,68 @@ app.post("/register", async (req, res, next) => {
 	}
 });
 
-app.listen(4500, () => {
-	console.log("app listening in port 4500");
+
+/*
+**		GET INFORMATION ABOUT AN USER "/user/info"
+**		connected to `CLI whoami`
+**		check if you dont find value
+*/
+
+var		create_options_get_info = (info, auth) => {
+//	let	data_string = JSON.stringify(info);
+	let options = {
+		url: 'http://' + external_ip + ':3000/api/v1/users/' + auth.username,
+		auth: {
+			 'user': auth.username ,
+			 'pass': auth.password
+		 }
+	};
+	console.log(options.url);
+	return (options);
+}
+
+var	getres_from_api_modular_GET = (info, auth, func_options) => {
+	return new Promise( (resolve, reject) => {
+		request(func_options(info, auth), (error, res, body) => {
+			if (error || res.statusCode === 404 || res.statusCode === 403)
+				reject(error);
+			console.log("status: " + res.statusCode);
+			console.log("error: " + error);
+//			if (res.statusCode === 201)
+//				info.status_code = true;
+			console.log("Printing body value (not res): " + body);
+//			console.log(info.sender);
+			resolve(res);
+		});
+	});
+}
+
+app.get("/user/info", async (req, res, next) => {
+	// parse a body and complete the request
+	let	info = {};
+	let	auth = {};
+	let	res_api;
+
+	auth.username = req.query.username;
+	auth.password = req.query.password;
+//	info.login_name = req.query.username;
+//	info.email = req.query.email;
+	try {
+		res_api = await getres_from_api_modular_GET(info, auth, create_options_get_info);
+		info.sender = JSON.parse(res_api.body);
+		console.log("printing sender");
+		console.log(info.sender);
+		res.status(203).send(JSON.stringify(info.sender));
+		res.end();
+	} catch(error) {
+		console.log("OH noo an error ocurred " + error);
+		res.status(404).send("invalid_user");
+		res.end();
+	}
 });
 
-// GET INFORMATION ABOUT AN USER "/user/info"
 
-app.get("/user/info", (req, res, next) => {
-	// parse a body and complete the request
-	res.end();
+
+app.listen(4500, () => {
+	console.log("app listening in port 4500");
 });
