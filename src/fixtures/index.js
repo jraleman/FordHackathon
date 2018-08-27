@@ -1,7 +1,5 @@
 import apps from './apps';
 
-const fixtures = {
+export {
   apps
 };
-
-export default fixtures;

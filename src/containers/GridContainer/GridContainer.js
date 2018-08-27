@@ -3,34 +3,17 @@ import GridItem from '../../components/GridItem';
 import GridTitle from '../../components/GridTitle';
 import GridFilters from '../../components/GridFilters';
 import getResponse from '../../libs/getResponse';
-
-const appsList = [
-  {
-    "title": {
-      "bold": "Item",
-      "light": "Eight"
-    },
-    "description": "Description of the eight item...",
-    "icon": "https://picsum.photos/g/599/599/?random",
-    "infoBtn": "https://picsum.photos/g/599/599/?random",
-    "downloadBtn": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "legal": {
-      "tos": "123",
-      "pc": "321"
-    },
-    "category": "new"
-  }
-];
+import { apps } from '../../fixtures';
 
 class GridContainer extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      appsCount: appsList.length,
+      appsCount: apps.length,
         toggle: []
     };
     // Creates N amount of 'bool' elements inside the toggle array
-    this.state.toggle = appsList.map(() => false);
+    this.state.toggle = apps.map(() => false);
     return ;
   }
   componentDidMount () {
@@ -50,20 +33,19 @@ class GridContainer extends React.Component {
               { Array.apply(null, Array(this.state.appsCount)).map(
                function(item, i) {
                  return (
-                  <React.Fragment>
+                  <React.Fragment key={ i }>
                     <GridItem
-                      key={ i }
-                      icon={ appsList[i].icon }
-                      info={ appsList[i].infoBtn }
-                      download={ appsList[i].downloadBtn }
-                      titleBold={ appsList[i].title.bold }
-                      titleRegular={ appsList[i].title.regular}
-                      category={ appsList[i].category }
+                      icon={ apps[i].icon }
+                      info={ apps[i].infoBtn }
+                      download={ apps[i].downloadBtn }
+                      titleBold={ apps[i].title.bold }
+                      titleRegular={ apps[i].title.regular }
+                      category={ apps[i].category }
                       onPress={ () => this.toggleModal(i) }
                     />
                     { this.state.toggle[i] == false ? null :
                       <ModalDialog
-                        description={ appsList[i].description }
+                        description={ apps[i].description }
                       />
                     }
                   </React.Fragment>
@@ -81,9 +63,7 @@ class GridContainer extends React.Component {
 const ModalDialog = (props) => {
   return (
     <React.Fragment>
-      <div>
-        <p> { props.description } </p>
-      </div>
+      <span> { props.description } </span>
     </React.Fragment>
   )
 }

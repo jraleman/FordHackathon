@@ -1,7 +1,7 @@
 {
   "title": {
     "bold": "Item",
-    "light": "Eight"
+    "regular": "Eight"
   },
   "description": "Description of the eight item...",
   "icon": "https://picsum.photos/g/599/599/?random",

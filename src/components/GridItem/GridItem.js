@@ -3,12 +3,13 @@ import React from 'react';
 class GridItem extends React.Component {
   constructor (props) {
     super(props);
-    this._appTitleStrong = this.props.titleStrong;
-    this._appTitleLight = this.props.titleLight;
-    this._appTitle = this.props.titleStrong + this.props.titleLight;
+    this._appTitleStrong = this.props.titleBold;
+    this._appTitleLight = this.props.titleRegular;
+    this._appTitle = this.props.titleBold + this.props.titleRegular;
     this._appIcon = this.props.icon;
     this._appDescription = this.props.desc;
-    this._appPreview = this.props.preview;
+    this._appPreview = this.props.info;
+    this._appDownload = this.props.download;
     this._appCategory = this.props.category;
     this._termOfServices = this.props.tos;
     this._privacyPolicy = this.props.pc;
@@ -33,7 +34,7 @@ class GridItem extends React.Component {
                   <a
                     href={ this._appPreview }
                     className="cbp-lightbox"
-                    data-title="ItemOne"
+                    data-title={ this._appTitle }
                   >
                     <i className="fa fa-info"></i>
                   </a>
