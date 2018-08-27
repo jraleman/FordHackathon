@@ -2,6 +2,7 @@ import React from 'react';
 import GridItem from '../../components/GridItem';
 import GridTitle from '../../components/GridTitle';
 import GridFilters from '../../components/GridFilters';
+import getResponse from '../../libs/getResponse';
 
 const appsList = [
   {
