@@ -7,6 +7,7 @@ var	usages = require("./usage_cli.js");
 var	readlineSync = require("readline-sync");
 var	request = require("request");
 var	exec = require("child_process").exec;
+var	dispatcher = require("./dispatcher.js");
 
 /*
 ** General information
@@ -57,9 +58,9 @@ var	user_info_path = process.env.HOME + "/.info_login"
 var	commands = [
 	"login",
 	"create",
+	"init",
 	"test",
-	"register",
-	"init"
+	"register"
 ];
 
 

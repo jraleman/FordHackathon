@@ -52,9 +52,9 @@ dispatcher.init = () => {
 	info.description = readlineSync.question("Description: ");
 
 
-	console.log("if more is used, just specify is one is needed to run the program");
+	console.log("if more is used, just specify the one needed to run the program");
 	console.log("otherwise fell free to use a Makefile");
-	info.pro_leanguage = readlineSync.question("Programming Leanguage: (Makefile)");
+	info.pro_leanguage = readlineSync.question("Programming Leanguage: (or Makefile)");
 	
 	info.main = readlineSync.question("main: ");
 	if (info.main.toString().trim() === "")
@@ -67,4 +67,4 @@ dispatcher.init = () => {
 
 
 
-dispatcher.
+//dispatcher.
