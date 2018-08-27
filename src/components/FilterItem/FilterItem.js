@@ -1,7 +1,6 @@
 import React from 'react';
-import GridContainer from '../GridContainer';
 
-class RootContainer extends React.Component {
+class FilterItem extends React.Component {
   constructor (props) {
     super(props);
     this.state = {};
@@ -10,10 +9,10 @@ class RootContainer extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <GridContainer />
+        <p>{ "FilterItem" }</p>
       </React.Fragment>
     );
   }
 }
 
-export default RootContainer;
+export default FilterItem;

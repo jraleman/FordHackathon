@@ -1,0 +1,15 @@
+{
+  "title": {
+    "bold": "Item",
+    "regular": "Sixteen"
+  },
+  "description": "Description of the sixteen item...",
+  "icon": "https://picsum.photos/g/607/607/?random",
+  "infoBtn": "https://picsum.photos/g/607/607/?random",
+  "downloadBtn": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "legal": {
+    "tos": "123",
+    "pc": "321"
+  },
+  "category": "new"
+}
