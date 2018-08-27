@@ -202,6 +202,15 @@ Contains JSON files that mimic API responses, used for quicker development.
 ![#D6DA08](http://via.placeholder.com/150/d6da08/000000?text=D6DA08)
 ![#1EF3F7](http://via.placeholder.com/150/1ef3f7/000000?text=1EF3F7)
 
+## TODO
+
+- [ ] Integrate `settings` option, save offline data
+- [ ] `gh-pages`
+- [ ] Setup domain for GoogleCloud app
+- [ ] Modal, include `terms of services` and `privacy policy`
+- [ ] Implement `FilterItem` and `FilterContainer`
+- [ ] Setup `RSPI`, complete hardware
+
 ## Sources
 
 - [Ford Motors - Basic Elements](http://www.lookandstyle.ford.com/cs/BlobServer?blobtable=MungoBlobs&blobcol=urldata&blobheadervalue1=attachment%3Bfilename%3D%22BasicElements_Aug_09a.pdf%22&blobheadervalue2=abinary%3Bcharset%3DUTF-8&blobheadername1=Content-Disposition&blobheadername2=MDT-Type&blobheader=application%2Fpdf&blobwhere=1214346775318&blobkey=id)
