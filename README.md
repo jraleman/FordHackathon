@@ -6,6 +6,8 @@
 
 ![ford-motors-logo](resources/ford-motors-logo.png)
 
+*[*Click here for the slideshow presentation*](https://docs.google.com/presentation/d/1b6cKAPT_kzY39aFwkkahI44Fba8QUhh-lTZzwHd2AU8/edit?usp=sharing)
+
 ## Setup
 
 Clone the repository
