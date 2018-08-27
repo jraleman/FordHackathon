@@ -162,18 +162,18 @@ Project resources, such as videos, photos, sketches, etc...
 
 React app source code.
 
-- #### `src/components/`
+- **`src/components/`**
 
 All the stateless components will go here.
 These components should only take props.
 
-- #### `src/containers/`
+- **`src/containers/`**
 
 The Container components go here.
 These are the stateful ones, and the ones that make the API calls.
 These are the ones that are connected to the Redux store.
 
-- #### `src/fixtures/`
+- **`src/fixtures/`**
 
 Contains JSON files that mimic API responses, used for quicker development.
 
@@ -181,6 +181,32 @@ Contains JSON files that mimic API responses, used for quicker development.
 
 This is a set of standards, principles and rules every developer or
 designer should follow in order to improve this product.
+
+### Code
+
+This project follows the `semistandard`, which is just the `standard` style
+guide, but including semicolons `;` at the end of a statement.
+
+#### Lint
+
+After running `npm install`, you can run the following scripts (depending on
+your platform), to check if the code follows the `semistandard` coding
+style guide.
+
+| Mac OS X           | Linux                    | Description                 |
+| :----------------- | :----------------------- | :-------------------------- |
+| `npm run lint`     | `npm run lint`           | Checks `src/` code style    |
+| `npm run lint-log` | `npm run lint-log-linux` | Saves and open the log file |
+
+If you have any problem running the lint from the project, try installing the
+following packages globally, like this:
+
+```
+npm install --save snazzy
+npm install --save semistandard
+```
+
+And then just run the lint from your end.
 
 ### Design
 
