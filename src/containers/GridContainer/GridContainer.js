@@ -6,30 +6,20 @@ import getResponse from '../../libs/getResponse';
 
 const appsList = [
   {
-    "appTitleStrong": "lol",
-    "appTitleLight": "lol",
-    "appTitle": "lol",
-    "appIcon": "lol",
-    "appDescription": "lol",
-    "appPreview": "lol",
-    "termOfServices": "lol",
-    "privacyPolicy": "lol"
-  },
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {}
+    "title": {
+      "bold": "Item",
+      "light": "Eight"
+    },
+    "description": "Description of the eight item...",
+    "icon": "https://picsum.photos/g/599/599/?random",
+    "infoBtn": "https://picsum.photos/g/599/599/?random",
+    "downloadBtn": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "legal": {
+      "tos": "123",
+      "pc": "321"
+    },
+    "category": "new"
+  }
 ];
 
 class GridContainer extends React.Component {
@@ -57,47 +47,45 @@ class GridContainer extends React.Component {
         <div className="row">
           <div className="col-md-12">
             <div id="grid-container" className="cbp-l-grid-agency">
-              <GridItem
-                icon={ "https://picsum.photos/g/592/592/?random" }
-                preview={ "https://picsum.photos/g/592/592/?random" }
-                titleStrong="Item"
-                titleLight="One"
-                category="category1"
-              />
-              <GridItem
-                icon={ "https://picsum.photos/g/593/593/?random" }
-                preview={ "https://picsum.photos/g/593/593/?random" }
-                titleStrong="Item"
-                titleLight="Two"
-                category="category2"
-              />
-              <GridItem
-                icon={ "https://picsum.photos/g/594/594/?random" }
-                preview={ "https://picsum.photos/g/594/594/?random" }
-                titleStrong="Item"
-                titleLight="Three"
-                category="category3"
-              />
-              <GridItem
-                icon={ "https://picsum.photos/g/595/595/?random" }
-                preview={ "https://picsum.photos/g/595/595/?random" }
-                titleStrong="Item"
-                titleLight="Four"
-                category="category4"
-              />
-              <GridItem
-                icon={ "https://picsum.photos/g/596/596/?random" }
-                preview={ "https://picsum.photos/g/596/596/?random" }
-                titleStrong="Item"
-                titleLight="Five"
-                category="category1"
-              />
+              { Array.apply(null, Array(this.state.appsCount)).map(
+               function(item, i) {
+                 return (
+                  <React.Fragment>
+                    <GridItem
+                      key={ i }
+                      icon={ appsList[i].icon }
+                      info={ appsList[i].infoBtn }
+                      download={ appsList[i].downloadBtn }
+                      titleBold={ appsList[i].title.bold }
+                      titleRegular={ appsList[i].title.regular}
+                      category={ appsList[i].category }
+                      onPress={ () => this.toggleModal(i) }
+                    />
+                    { this.state.toggle[i] == false ? null :
+                      <ModalDialog
+                        description={ appsList[i].description }
+                      />
+                    }
+                  </React.Fragment>
+                  );
+                }, this)
+              }
             </div>
           </div>
         </div>
       </React.Fragment>
     );
   }
+}
+
+const ModalDialog = (props) => {
+  return (
+    <React.Fragment>
+      <div>
+        <p> { props.description } </p>
+      </div>
+    </React.Fragment>
+  )
 }
 
 export default GridContainer;
