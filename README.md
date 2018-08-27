@@ -33,31 +33,62 @@ This is the main idea:
 
 ```
 ./
+├── Gruntfile.js
 ├── README.md
 ├── package-lock.json
 ├── package.json
 ├── public/
 │   ├── css/
-│   │   ├── responsive.css
 │   │   └── styles.css
 │   ├── favicon.ico
 │   ├── index.html
 │   ├── js/
-│   │   ├── jquery-1.12.4.min.js
+│   │   ├── cubeportfolio.js
 │   │   └── scripts.js
-│   └── manifest.json
+│   ├── login.html
+│   ├── manifest.json
+│   └── plugins/
+│       ├── animate/
+│       │   └── animate.css
+│       ├── bootstrap/
+|      ...
+│       └── smooth-scroll/
+│           └── smooth-scroll.js
 ├── resources/
+│   ├── build-up/
+│   │   ├── photos/
+│   │   │   ├── mounting-phone-holder.jpg
+│   │   │   ├── mounting-secure-top.jpg
+│   │   │   └── mounting-top.jpg
+│   │   ├── stuff-to-buy.pdf
+│   │   └── videos/
+│   │       ├── cutting-pc-case.mp4
+│   │       └── mounting-overview.mp4
 │   ├── ford-motors-logo.png
 │   └── sketches/
+│       ├── app-info-page.pdf
 │       ├── ford-platform.pdf
+│       ├── metrocube-logo.pdf
 │       └── platform-ui.pdf
 ├── src/
 │   ├── App.js
 │   ├── components/
-│   │   └── GridItem/
-│   │       ├── GridItem.js
+│   │   ├── FilterItem/
+│   │   │   ├── FilterItem.js
+│   │   │   └── index.js
+│   │   ├── GridFilters/
+│   │   │   ├── GridFilters.js
+│   │   │   └── index.js
+│   │   ├── GridItem/
+│   │   │   ├── GridItem.js
+│   │   │   └── index.js
+│   │   └── GridTitle/
+│   │       ├── GridTitle.js
 │   │       └── index.js
 │   ├── containers/
+│   │   ├── FilterContainer/
+│   │   │   ├── FilterContainer.js
+│   │   │   └── index.js
 │   │   ├── GridContainer/
 │   │   │   ├── GridContainer.js
 │   │   │   └── index.js
@@ -68,12 +99,44 @@ This is the main idea:
 │   │   ├── apps/
 │   │   │   ├── index.js
 │   │   │   ├── json/
-│   │   │   │   └── appItemOne.json
+│   │   │   │   ├── appItemEight.json
+│   │   │   │   ├── appItemEleven.json
+│   │   │   │   ├── appItemFifthteen.json
+│   │   │   │   ├── appItemFive.json
+│   │   │   │   ├── appItemFour.json
+│   │   │   │   ├── appItemFourteen.json
+│   │   │   │   ├── appItemNine.json
+│   │   │   │   ├── appItemOne.json
+│   │   │   │   ├── appItemSeven.json
+│   │   │   │   ├── appItemSix.json
+│   │   │   │   ├── appItemSixteen.json
+│   │   │   │   ├── appItemTen.json
+│   │   │   │   ├── appItemThirteen.json
+│   │   │   │   ├── appItemThree.json
+│   │   │   │   ├── appItemTwelve.json
+│   │   │   │   └── appItemTwo.json
 │   │   │   └── png/
-│   │   │       └── app-item-one.png
+│   │   │       ├── app-item-eight.png
+│   │   │       ├── app-item-eleven.png
+│   │   │       ├── app-item-fifthteen.png
+│   │   │       ├── app-item-five.png
+│   │   │       ├── app-item-four.png
+│   │   │       ├── app-item-fourteen.png
+│   │   │       ├── app-item-nine.png
+│   │   │       ├── app-item-one.png
+│   │   │       ├── app-item-seven.png
+│   │   │       ├── app-item-six.png
+│   │   │       ├── app-item-sixteen.png
+│   │   │       ├── app-item-ten.png
+│   │   │       ├── app-item-thirteen.png
+│   │   │       ├── app-item-three.png
+│   │   │       ├── app-item-twelve.png
+│   │   │       └── app-item-two.png
 │   │   └── index.js
 │   ├── index.js
-│   └── registerServiceWorker.js
+│   └── libs/
+│       ├── getResponse.js
+│       └── registerServiceWorker.js
 └── yarn.lock
 ```
 
@@ -109,7 +172,6 @@ These are the ones that are connected to the Redux store.
 - #### `src/fixtures/`
 
 Contains JSON files that mimic API responses, used for quicker development.
-These are used by `src/services/` to mock API responses.
 
 ## Guidelines
 
