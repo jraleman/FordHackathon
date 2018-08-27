@@ -85,7 +85,6 @@ var	verify_user = (options) => {
 		request(options, (error, res, body) => {
 			if (error || res.statusCode === 404)
 				reject(error);
-			console.log(body);
 			resolve(res);
 		});
 	});
@@ -118,7 +117,7 @@ const get_user_data = async () => {
 	try {
 		res_api = await verify_user(options);
 		res_body_parse = JSON.parse(res_api.body);
-		console.log(res_body_parse);
+//		console.log(res_body_parse);
 		if (res_body_parse.email === "") {
 			console.log("invalid password");
 			process.exit();
@@ -159,10 +158,8 @@ var	create_options_repo = (info, auth) => {
 var	api_create_repo = (options) => {
 	return new Promise ( (resolve, reject) => {
 		request(options, (error, res, body) => {
-			console.log(res.statusCode);
 			if (error || res.statusCode === 404)
 				reject(error);
-			console.log(body);
 			resolve(res);
 		});
 	});
@@ -265,12 +262,6 @@ const	parse_argv = (argv) => {
 			execute_function(i);
 	}
 }
-
-/*
-const	login_form = () => {
-		console.log("entering login_form");
-}
-*/
 
 
 
