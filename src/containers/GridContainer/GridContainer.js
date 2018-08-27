@@ -3,6 +3,7 @@ import GridItem from '../../components/GridItem';
 import GridTitle from '../../components/GridTitle';
 import GridFilters from '../../components/GridFilters';
 import getResponse from '../../libs/getResponse';
+import postResponse from '../../libs/postResponse';
 import { apps } from '../../fixtures';
 
 class GridContainer extends React.Component {
@@ -18,6 +19,7 @@ class GridContainer extends React.Component {
   }
   componentDidMount () {
     getResponse('/users');
+    postResponse('/users')
   }
   render () {
     return (

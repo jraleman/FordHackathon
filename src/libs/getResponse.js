@@ -1,15 +1,14 @@
 import axios from 'axios';
 
-const baseUrl = 'https://jsonplaceholder.typicode.com'
+const baseUrl = 'https://jsonplaceholder.typicode.com';
 
 export default function getResponse (endPoint) {
   console.log('Getting response from: ' + endPoint);
   axios.get(baseUrl + endPoint)
-  .then(res => {
-    const persons = res.data;
-    console.log(persons);
+  .then(function (response) {
+    console.log(response.data);
   })
-  .catch(err => {
-    console.log('Error: ' + err);
+  .catch(function (error) {
+    console.log(error);
   });
 }
