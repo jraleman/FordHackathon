@@ -1,0 +1,15 @@
+{
+  "title": {
+    "bold": "Item",
+    "regular": "Five"
+  },
+  "description": "Description of the five item...",
+  "icon": "https://picsum.photos/g/596/596/?random",
+  "infoBtn": "https://picsum.photos/g/596/596/?random",
+  "downloadBtn": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "legal": {
+    "tos": "123",
+    "pc": "321"
+  },
+  "category": "new"
+}

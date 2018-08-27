@@ -1,0 +1,15 @@
+{
+  "title": {
+    "bold": "Item",
+    "regular": "Seven"
+  },
+  "description": "Description of the seven item...",
+  "icon": "https://picsum.photos/g/598/598/?random",
+  "infoBtn": "https://picsum.photos/g/598/598/?random",
+  "downloadBtn": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "legal": {
+    "tos": "123",
+    "pc": "321"
+  },
+  "category": "new"
+}

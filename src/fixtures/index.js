@@ -1,5 +1,7 @@
 import apps from './apps';
 
-export default const fixtures = {
+const fixtures = {
   apps
 };
+
+export default fixtures;

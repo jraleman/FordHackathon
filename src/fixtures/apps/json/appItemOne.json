@@ -1,5 +1,15 @@
 {
-  "name": "App Item One",
-  "description": "The first item",
-  "icon": "../png/app-item-one.png"
+  "title": {
+    "bold": "Item",
+    "regular": "One"
+  },
+  "description": "Description of the first item...",
+  "icon": "https://picsum.photos/g/592/592/?random",
+  "infoBtn": "https://picsum.photos/g/592/592/?random",
+  "downloadBtn": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "legal": {
+    "tos": "123",
+    "pc": "321"
+  },
+  "category": "new"
 }
