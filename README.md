@@ -1,4 +1,4 @@
-# FordHackathon
+# MetroCube App Store :: FordHackathon
 
 ![ford-motors-logo](resources/ford-motors-logo.png)
 
@@ -219,3 +219,13 @@ Contains JSON files that mimic API responses, used for quicker development.
 - [Ford Motors - Brand Book](https://issuu.com/willzanette/docs/brandbook_ford)
 - [Ford Motors - Guidelines](https://logoblink.com/ford-guidelines-brand-book-pdf)
 - [MetroCube - HTML5 Theme](https://github.com/jraleman/MetroCube)
+
+## License
+
+This project is under the Apache License, a permissive license whose main
+conditions require preservation of copyright and license notices.
+Contributors provide an express grant of patent rights.
+Licensed works, modifications, and larger works may be distributed under
+different terms and without source code.
+
+See [LICENSE](LICENSE) for more info.
