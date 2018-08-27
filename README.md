@@ -209,7 +209,9 @@ Contains JSON files that mimic API responses, used for quicker development.
 - [ ] Setup domain for GoogleCloud app
 - [ ] Modal, include `terms of services` and `privacy policy`
 - [ ] Implement `FilterItem` and `FilterContainer`
-- [ ] Setup `RSPI`, complete hardware
+- [ ] Setup `RSPI`, install Raspbian and dependencies
+- [ ] Swagger API for documentation
+- [ ] EagleCAD electronic schematics
 
 ## Sources
 
