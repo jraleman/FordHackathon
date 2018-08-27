@@ -177,29 +177,36 @@ These are the ones that are connected to the Redux store.
 
 Contains JSON files that mimic API responses, used for quicker development.
 
-## Guidelines
+## Style Guide
 
-...
+This is a set of standards, principles and rules every developer or
+designer should follow in order to improve this product.
 
 ### Design
 
-...
+Good design is not just what looks good.
+It also needs to perform, convert, astonish, and fulfill its purpose.
+It can be innovative or it might just get the job done.
 
-#### Palette
+#### Color Palette
+
+**Primary Colors**
 
 ![#005596](http://via.placeholder.com/150/005596/ffffff?text=005596)
 ![#0067B2](http://via.placeholder.com/150/0067B2/ffffff?text=0067B2)
+
+**Alternative Colors**
 
 ![#F78F1E](http://via.placeholder.com/150/F78F1E/ffffff?text=F78F1E)
 ![#949599](http://via.placeholder.com/150/949599/ffffff?text=949599)
 ![#D2D3D5](http://via.placeholder.com/150/D2D3D5/000000?text=D2D3D5)
 
-#### Dark / Light
+**Dark / Light**
 
 ![#231F20](http://via.placeholder.com/150/231F20/ffffff?text=231F20)
 ![#FFFFFF](http://via.placeholder.com/150/FFFFFF/000000?text=FFFFFF)
 
-#### Success / Error / Warning / Info
+**Success / Error / Warning / Info**
 
 ![#1EF78F](http://via.placeholder.com/150/1ef78f/000000?text=1EF78F)
 ![#F7221E](http://via.placeholder.com/150/f7221e/000000?text=F7221E)
@@ -219,6 +226,7 @@ Contains JSON files that mimic API responses, used for quicker development.
 
 ## Sources
 
+- [Forbes - Brand Style Guides ](https://www.forbes.com/sites/propointgraphics/2016/07/24/brand-style-guides/#18d35a2b61a5)
 - [Ford Motors - Basic Elements](http://www.lookandstyle.ford.com/cs/BlobServer?blobtable=MungoBlobs&blobcol=urldata&blobheadervalue1=attachment%3Bfilename%3D%22BasicElements_Aug_09a.pdf%22&blobheadervalue2=abinary%3Bcharset%3DUTF-8&blobheadername1=Content-Disposition&blobheadername2=MDT-Type&blobheader=application%2Fpdf&blobwhere=1214346775318&blobkey=id)
 - [Ford Motors - Brand Book](https://issuu.com/willzanette/docs/brandbook_ford)
 - [Ford Motors - Guidelines](https://logoblink.com/ford-guidelines-brand-book-pdf)
