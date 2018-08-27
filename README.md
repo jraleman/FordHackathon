@@ -224,6 +224,18 @@ Contains JSON files that mimic API responses, used for quicker development.
 - [Ford Motors - Guidelines](https://logoblink.com/ford-guidelines-brand-book-pdf)
 - [MetroCube - HTML5 Theme](https://github.com/jraleman/MetroCube)
 
+## Dependencies
+
+This project uses the following technologies:
+
+- Animate
+- Axios
+- Bootstrap
+- Cubeportfolio
+- FontAwesome
+- JQuery
+- SmoothScroll
+
 ## License
 
 This project is under the Apache License, a permissive license whose main
