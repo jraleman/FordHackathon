@@ -4,7 +4,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/jraleman/FordHackathon.svg)](https://github.com/jraleman/FordHackathon/stars)
 [![GitHub Issues](https://img.shields.io/github/issues/jraleman/FordHackathon.svg)](https://github.com/jraleman/FordHackathon/issues)
 
-![ford-motors-logo](resources/ford-motors-logo.png)
+![ford-motors-logo](resources/logo/ford-motors-logo.png)
 
 ## Setup
 
